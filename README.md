@@ -17,6 +17,7 @@ None of the variables below are required.
 
 | Variable                   | Default | Comments                                                                                                                                                  |
 | :---                       | :---    | :---                                                                                                                                                      |
+| `dnsmasq_no_hosts`         | -       | Set this to prevent reading hostnames from  `/etc/hosts`.                                                                   |
 | `dnsmasq_addn_hosts`       | -       | Set this to specify a custom host file that should be read in addition to `/etc/hosts`.                                                                   |
 | `dnsmasq_authoritative`    | `false` | When `true`, dnsmasq will function as an authoritative name server.                                                                                       |
 | `dnsmasq_bogus_priv`       | `true`  | When `true`, Dnsmasq will not forward addresses in the non-routed address spaces.                                                                         |

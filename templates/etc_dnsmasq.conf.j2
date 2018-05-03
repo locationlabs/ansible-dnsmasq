@@ -22,6 +22,10 @@ bogus-priv
 resolv-file={{ dnsmasq_resolv_file }}
 
 {% endif %}
+{% if dnsmasq_no_hosts is defined %}
+no-hosts
+
+{% endif %}
 {% if dnsmasq_addn_hosts is defined %}
 addn-hosts={{ dnsmasq_addn_hosts }}
 
