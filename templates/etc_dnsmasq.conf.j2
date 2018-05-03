@@ -74,4 +74,12 @@ srv-host={{ host.name }}{% if host.target is defined %},{{ host.target }}{% endi
 {% endfor %}
 {% endif %}
 
+{% if dnsmasq_static_host_records is defined %}
+{% for host in dnsmasq_static_host_records %}
+host-record={{ host.name }},{{ host.ip  }}{% if host.ttl is defined %},{{ host.ttl }}{% endif %}
+
+{% endfor %}
+
+{% endif %}
+
 conf-dir=/etc/dnsmasq.d
