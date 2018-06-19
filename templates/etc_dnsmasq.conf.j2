@@ -82,4 +82,11 @@ host-record={{ host.name }},{{ host.ip  }}{% if host.ttl is defined %},{{ host.t
 
 {% endif %}
 
+{% if dnsmasq_cnames is defined %}
+{% for entry in dnsmasq_cnames %}
+cname={{ entry.cname }},{{ entry.target }}{% if entry.ttl is defined %},{{ entry.ttl }}{% endif %}
+
+{% endfor %}
+{% endif %}
+
 conf-dir=/etc/dnsmasq.d
