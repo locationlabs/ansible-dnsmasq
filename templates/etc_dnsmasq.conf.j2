@@ -53,6 +53,10 @@ dhcp-host={{ host.mac }},{{ host.ip  }}{% if host.name is defined %},{{ host.nam
 dhcp-option=option:router,{{ dnsmasq_option_router }}
 {% endif %}
 
+{% if dnsmasq_option_ntp_servers is defined %}
+dhcp-option=option:ntp-server{% for server in dnsmasq_option_ntp_servers|sort %},{{ server }}{% endfor %}
+{% endif %}
+
 {% if dnsmasq_upstream_servers is defined %}
 {% if dnsmasq_upstream_servers is iterable %}
 {% for host in dnsmasq_upstream_servers %}
