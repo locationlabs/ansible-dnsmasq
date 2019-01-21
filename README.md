@@ -19,7 +19,7 @@ None of the variables below are required.
 | :---                       | :---    | :---                                                                                                                                                      |
 | `dnsmasq_no_hosts`         | -       | Set this to prevent reading hostnames from  `/etc/hosts`.                                                                   |
 | `dnsmasq_addn_hosts`       | -       | Set this to specify a custom host file that should be read in addition to `/etc/hosts`.                                                                   |
-| `dnsmasq_authoritative`    | `false` | When `true`, dnsmasq will function as an authoritative name server.                                                                                       |
+| `dnsmasq_authoritative`    | `false` | When `true`, dnsmasq will function as an authoritative name server. Requires setting `dnsmasq_domain` and `dnsmasq_interface`.                              |
 | `dnsmasq_bogus_priv`       | `true`  | When `true`, Dnsmasq will not forward addresses in the non-routed address spaces.                                                                         |
 | `dnsmasq_dhcp_hosts`       | -       | Array of hashes specifying IP address reservations for hosts, with keys `name` (optional), `mac` and `ip` for each reservation. See below.             |
 | `dnsmasq_dhcp_ranges`      | -       | Array of hashes specifying DHCP ranges (with keys `start_addr`, `end_addr`, and `lease_time`) for each address pool. This also enables DHCP. See below. |
