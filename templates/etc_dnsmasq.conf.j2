@@ -70,7 +70,7 @@ server={{ dnsmasq_upstream_servers }}
 {% if dnsmasq_authoritative %}
 dhcp-authoritative
 # Set auth-server so we also get the zone SOA serial set by timestamp
-auth-server={{ dnsmasq_domain }},{{ dnsmasq_interface }}
+auth-server={{ dnsmasq_domain|mandatory }},{{ dnsmasq_interface|mandatory }}
 {% endif %}
 
 {% if dnsmasq_srv_hosts is defined %}
